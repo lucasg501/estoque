@@ -1,0 +1,49 @@
+create schema estoque;
+
+use estoque;
+
+create table produtos(
+	idProduto int not null primary key auto_increment,
+    nomeProduto varchar(245) not null,
+    descricao varchar(245) not null,
+    precoCusto decimal not null,
+    precoVenda decimal not null,
+    estoqueAtual int,
+    unidade varchar(10),
+    idCategoria int,
+    foreign key (idCategoria) references categoria(idCategoria) 
+);
+
+create table categoria(
+	idCategoria int primary key not null auto_increment,
+    nomeCategoria varchar(245) not null
+);
+
+create table movimentacoes(
+	idMov int not null primary key auto_increment,
+    quantidade int not null,
+    dataMov datetime not null,
+    observacao text,
+    tipoMov enum('e','s') not null,
+    idProduto int,
+    foreign key (idProduto) references produtos (idProduto)
+);
+
+create table usuarios(
+	idUsu int not null primary key auto_increment,
+    nomeUsu varchar(245),
+    login varchar(50),
+    senha varchar(50)
+);
+
+
+
+
+
+
+
+
+
+
+
+

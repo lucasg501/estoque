@@ -1,0 +1,623 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000/"
+    }
+  ],
+  "paths": {
+    "/produtos/listar": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Lista os produtos cadastrados",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/produtos/obter/{idProduto}": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Obtem um produto cadastrado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idProduto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/produtos/gravar": {
+      "post": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Adiciona um novo produto",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/produtos"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produtos/alterar": {
+      "put": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Altera um produto cadastrado",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/produtos"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produtos/excluir/{idProduto}": {
+      "delete": {
+        "tags": [
+          "Produtos"
+        ],
+        "summary": "Exclui um produto cadastrado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idProduto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/categorias/listar": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Lista as categorias cadastradas",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/categorias/obter/{idCategoria}": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Obtem uma categoria cadastrada",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idCategoria",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/categorias/gravar": {
+      "post": {
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Adiciona uma nova categoria",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/categoria"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categorias/alterar": {
+      "put": {
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Adiciona uma nova categoria",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/categoria"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categorias/excluir/{idCategoria}": {
+      "delete": {
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Exclui uma categoria cadastrada",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idCategoria",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/movimentacoes/listar": {
+      "get": {
+        "tags": [
+          "Movimentacoes"
+        ],
+        "summary": "Lista as movimentacoes cadastradas",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/movimentacoes/obter/{idMovimentacao}": {
+      "get": {
+        "tags": [
+          "Movimentacoes"
+        ],
+        "summary": "Obtem uma movimentacao cadastrada",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idMovimentacao",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/movimentacoes/obterProd/{idProduto}": {
+      "get": {
+        "tags": [
+          "Movimentacoes"
+        ],
+        "summary": "Obtem uma movimentacao cadastrada",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idProduto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/movimentacoes/gravar": {
+      "post": {
+        "tags": [
+          "Movimentacoes"
+        ],
+        "summary": "Adiciona uma nova movimentacao",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/movimentacao"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/movimentacoes/alterar": {
+      "put": {
+        "tags": [
+          "Movimentacoes"
+        ],
+        "summary": "Altera uma movimentacao cadastrada",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/movimentacao"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/movimentacoes/excluir/{idMovimentacao}": {
+      "delete": {
+        "tags": [
+          "Movimentacoes"
+        ],
+        "summary": "Exclui uma movimentacao cadastrada",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idMovimentacao",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/usuarios/listar": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Lista os usuarios cadastrados",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/usuarios/autenticar/{login}/{senha}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Autentica um usuario cadastrado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "login",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "senha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/usuarios/obter/{idUsu}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Obtem um usuario cadastrado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idUsu",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/usuarios/gravar": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Adiciona um novo usuario",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuarios/alterar": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Altera um usuario cadastrado",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/usuario"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuarios/excluir/{idUsuario}": {
+      "delete": {
+        "tags": [
+          "Usuarios"
+        ],
+        "summary": "Exclui um usuario cadastrado",
+        "description": "",
+        "parameters": [
+          {
+            "name": "idUsuario",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "produtos": {
+        "type": "object",
+        "properties": {
+          "idProduto": {
+            "type": "number",
+            "example": 0
+          },
+          "nomeProduto": {
+            "type": "string",
+            "example": "Batata"
+          },
+          "descricao": {
+            "type": "string",
+            "example": "Batata pringles de churrasco"
+          },
+          "precoCusto": {
+            "type": "number",
+            "example": 4
+          },
+          "precoVenda": {
+            "type": "number",
+            "example": 12.5
+          },
+          "estoqueAtual": {
+            "type": "number",
+            "example": 5
+          },
+          "unidade": {
+            "type": "string",
+            "example": "un"
+          },
+          "idCategoria": {
+            "type": "number",
+            "example": 2
+          }
+        }
+      },
+      "categoria": {
+        "type": "object",
+        "properties": {
+          "idCategoria": {
+            "type": "number",
+            "example": 0
+          },
+          "nomeCategoria": {
+            "type": "string",
+            "example": "Batata"
+          }
+        }
+      },
+      "movimentacao": {
+        "type": "object",
+        "properties": {
+          "idMov": {
+            "type": "number",
+            "example": 0
+          },
+          "quantidade": {
+            "type": "number",
+            "example": 2
+          },
+          "dataMov": {
+            "type": "string",
+            "example": "2025-08-01"
+          },
+          "observacao": {
+            "type": "string",
+            "example": "Foi uma venda pra um mendigo"
+          },
+          "tipoMov": {
+            "type": "string",
+            "example": "S"
+          },
+          "idProduto": {
+            "type": "number",
+            "example": 3
+          }
+        }
+      },
+      "usuario": {
+        "type": "object",
+        "properties": {
+          "idUsu": {
+            "type": "number",
+            "example": 0
+          },
+          "nomeUsu": {
+            "type": "string",
+            "example": "Clodoaldo"
+          },
+          "login": {
+            "type": "string",
+            "example": "clodoaldo69"
+          },
+          "senha": {
+            "type": "string",
+            "example": "fofinho123"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "apiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "apiKey",
+        "description": "chave para autenticacao da api"
+      }
+    }
+  }
+}
